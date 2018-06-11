@@ -1,25 +1,23 @@
 package oop.ex6.main;
-
 import java.io.FileNotFoundException;
+
 
 public class Sjavac {
 
-
-
-    public static void main(String[] args){
-
-        if (args.length != 1){
-            // raise something
-
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println(2);
         }
-        else{
+        else {
             try {
-                Parser.parse(args[0]);
+                LineReader lineReader = new LineReader(args[0]);
+                Scope scope = new Scope(null, lineReader);
             } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                System.out.println(2);
+            } catch (UnclosedScopeException e) {
+                System.out.println(1);
             }
+
         }
-
-
     }
 }
