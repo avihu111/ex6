@@ -2,7 +2,6 @@ package oop.ex6.Scopes;
 
 import oop.ex6.Variables.Variable;
 import oop.ex6.main.LineReader;
-import oop.ex6.main.UnclosedScopeException;
 
 import java.util.ArrayList;
 

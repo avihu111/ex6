@@ -1,6 +1,7 @@
 package oop.ex6.main;
 
 import oop.ex6.Scopes.Scope;
+import oop.ex6.Scopes.UnclosedScopeException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
