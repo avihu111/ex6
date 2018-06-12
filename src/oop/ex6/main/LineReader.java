@@ -1,13 +1,14 @@
 package oop.ex6.main;
 
+import oop.ex6.Scopes.Scope;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-class LineReader {
+public class LineReader {
 
 
     private Scanner scanner;
@@ -34,7 +35,7 @@ class LineReader {
     }
 
 
-    boolean readLine(Scope scope) throws UnclosedScopeException {
+    public boolean readLine(Scope scope) throws UnclosedScopeException {
         if (scanner.hasNextLine()) {
             String line = scanner.nextLine();
 

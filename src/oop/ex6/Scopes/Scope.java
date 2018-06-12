@@ -1,15 +1,16 @@
-package oop.ex6.main;
+package oop.ex6.Scopes;
 
 import oop.ex6.Variables.Variable;
+import oop.ex6.main.LineReader;
+import oop.ex6.main.UnclosedScopeException;
 
 import java.util.ArrayList;
 
 public class Scope {
 
-    Scope parent ;
-    LineReader lineReader;
+    public Scope parent;
+    private LineReader lineReader;
     private ArrayList<Variable> variables;
-
 
 
     public Scope(Scope parent, LineReader lineReader) throws UnclosedScopeException {
@@ -18,18 +19,16 @@ public class Scope {
         this.variables = new ArrayList<>();
 
         boolean isScopeOpen = true;
-        while (isScopeOpen){
+        while (isScopeOpen) {
             isScopeOpen = lineReader.readLine(this);
         }
-
-
     }
 
 
-    public boolean isVariableInScope(Variable variable){
+    public boolean isVariableInScope(Variable variable) {
         Scope current = this;
-        while (current != null){
-            if (variables.contains(variable)){
+        while (current != null) {
+            if (variables.contains(variable)) {
                 return true;
             }
             current = current.parent;
